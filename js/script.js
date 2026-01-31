@@ -1,22 +1,36 @@
-alert("Welcome to the Travel Recommendation Website!");
-
 function searchDestination() {
     const query = document.getElementById("searchInput").value.toLowerCase();
 
-    if (query === "beach") {
-        alert("Showing beach destinations");
-    } else if (query === "temple") {
-        alert("Showing temple destinations");
-    } else if (query === "country") {
-        alert("Showing country recommendations");
-    } else if (query === "") {
+    const beach = document.getElementById("beach");
+    const temple = document.getElementById("temple");
+    const country = document.getElementById("country");
+
+    // Hide all first
+    beach.style.display = "none";
+    temple.style.display = "none";
+    country.style.display = "none";
+
+    if (query.includes("beach")) {
+        beach.style.display = "block";
+    } 
+    else if (query.includes("temple")) {
+        temple.style.display = "block";
+    } 
+    else if (query.includes("country")) {
+        country.style.display = "block";
+    } 
+    else if (query === "") {
         alert("Please enter a search term");
-    } else {
+    } 
+    else {
         alert("No matching destination found");
     }
 }
 
 function clearSearch() {
     document.getElementById("searchInput").value = "";
-    alert("Search cleared");
+
+    document.getElementById("beach").style.display = "block";
+    document.getElementById("temple").style.display = "block";
+    document.getElementById("country").style.display = "block";
 }
