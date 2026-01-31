@@ -5,7 +5,7 @@ function searchDestination() {
     const temple = document.getElementById("temple");
     const country = document.getElementById("country");
 
-    // Hide all first
+    // Hide all sections first
     beach.style.display = "none";
     temple.style.display = "none";
     country.style.display = "none";
@@ -30,6 +30,7 @@ function searchDestination() {
 function clearSearch() {
     document.getElementById("searchInput").value = "";
 
+    // Show all sections again
     document.getElementById("beach").style.display = "block";
     document.getElementById("temple").style.display = "block";
     document.getElementById("country").style.display = "block";
